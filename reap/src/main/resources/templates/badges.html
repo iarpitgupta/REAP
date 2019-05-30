@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Badges</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="header" content="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+
+    <link th:href="@{/assets/css/dashboard.css}" type="text/css" rel="stylesheet">
+    <!--<link href="../static/assets/css/dashboard.css" type="text/css" rel="stylesheet">-->
+    <link th:href="@{/assets/css/main.css}" type="text/css" rel="stylesheet">
+    <!--<link href="../static/assets/css/main.css" type="text/css" rel="stylesheet">-->
+    <link th:href="@{/assets/css/badges.css}" type="text/css" rel="stylesheet">
+    <!--<link href="../static/assets/css/badges.css" type="text/css" rel="stylesheet">-->
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+    <header>
+
+        <nav class="navbar navbar-expand-sm  fixed-top customNav">
+
+            <!--Toggle Button-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+
+                <!--Navbar Images-->
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/private/dashboard"><img
+                                src="http://reap.tothenew.com/assets/reap-ed280031215032f3350f114b95893a51.png"
+                                height="30"
+                                width="120"/></a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/private/dashboard"><img
+                                src="http://reap.tothenew.com/assets/text_footer-8f0e1eb9c8ec931dcc66dbcdc631fe64.png"
+                                height="30"
+                                width="400"/></a>
+
+                    </li>
+
+                </ul>
+
+
+                <!--Nav Links-->
+                <div class="collapse navbar-collapse justify-content-end">
+
+                    <ul class="nav navbar-nav navbar-right dashboardList justify-content-end pull-right"
+                        style="align-items: center; margin-right: 30px;">
+
+                        <li class="nav-item nav-menu marginRight listItem">
+
+                            <a class="nav-link" href="/private/dashboard"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                        </li>
+
+                        <li class="nav-item nav-menu marginRight listItem active ">
+
+                            <a class="nav-link" href="#"><i class="fas fa-award"></i>Badges</a>
+
+                        </li>
+                        <li class="nav-item nav-menu marginRight listItem ">
+
+                            <a class="nav-link" href="/private/itemspage"><i class="fas fa-award"></i>Items</a>
+
+                        </li>
+
+                    </ul>
+
+
+                    <!--Profile Modal DropDown-->
+
+
+                    <ul class="navbar-nav" style="margin-right: 30px;">
+
+                        <li class="nav-item dropdown">
+
+                            <a id="profileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="recieverImage"
+                                     th:src="${loggedinemployee.getProfilePic()}">
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileMenu">
+
+                                <div class="profileModal">
+
+                                    <div class="profileModalContent">
+
+                                        <h4 th:text="${loggedinemployee.getFullName()}"></h4>
+
+                                        <div class="row" style="margin-top: 10px">
+
+                                            <!--Profile Image-->
+                                            <div class="col-md-4">
+                                                <img th:src="${loggedinemployee.getProfilePic()}"
+                                                     width="80px" height="80px"/>
+                                            </div>
+
+                                            <!--Profile Info-->
+                                            <div class="col-md-8">
+
+                                                <div class="row">
+                                                    <div class="col-md-4 profileModalFontNormal">
+                                                        <p>Name:</p>
+                                                        <p>Email:</p>
+                                                    </div>
+                                                    <div class="col-md-8 profileModalFontBold">
+                                                        <p th:text="${loggedinemployee.getFullName()}"></p>
+                                                        <p th:text="${loggedinemployee.getEmail()}"></p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                    <!--Profile Footer-->
+                                    <div class="clearfix profileFooter">
+                                        <a class="footerRight" href="/logout">Logout</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="content-wrapper" style="min-height: 515px; margin-top: 60px;">
+
+        <div class="container-fluid">
+
+
+            <div class="row">
+
+
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <div class="card-header">
+                            <img src="http://reap.tothenew.com/assets/ico-badge-hover-6ad40a50088b6e0747f43352ae621d8c.png"
+                                 height="20" width="20"/>&nbsp;&nbsp; Badges And Points
+                        </div>
+
+                        <div class="card-body userInfo coins">
+
+                            <div class="row">
+
+                                <div class="col-sm-1">
+
+                                    <img class="receiverImage"
+                                         th:src="${employeebadges.getEmployee().getProfilePic()}">
+
+                                </div>
+
+                                <div class="col-sm-6 userDetail">
+
+                                    <h3 id="myName"
+                                        th:text="${employeebadges.getEmployee().getFullName()}">
+                                    </h3>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                             height="18" width="20" alt="gold"/>
+                                        <i th:text="${employeebadges.getGold()}"></i>
+                                  </span>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                             height="18" width="20" alt="silver"/>
+                                         <i th:text="${employeebadges.getSilver()}"></i>
+                                  </span>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                             height="18" width="20" alt="bronze"/>
+                                         <i th:text="${employeebadges.getBronze()}"></i>
+                                  </span>
+
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <p class="pointsStyle" th:text="${employeebadges.getTotalPoints()} + ' pts'"></p>
+                                </div>
+                                <div>
+                                    <a href="/private/itemspage">
+                                        <button class="btn btn-primary" style="margin-left: 240px">Redeem Points
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <div>
+
+                        <div class="card customTable">
+
+                            <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                                <li>
+
+                                    <a class="nav-item nav-link active" id="nav-all-tab" data-toggle="tab"
+                                       href="#nav-all"
+                                       role="tab" aria-controls="nav-all" aria-selected="true">All</a>
+
+                                </li>
+
+                                <li>
+
+                                    <a class="nav-item nav-link " id="nav-shared-tab" data-toggle="tab"
+                                       href="#nav-shared"
+                                       role="tab" aria-controls="nav-shared" aria-selected="true">Badges Shared</a>
+
+                                </li>
+
+                                <li>
+
+                                    <a class="nav-item nav-link" id="nav-receive-tab" data-toggle="tab"
+                                       href="#nav-receive"
+                                       role="tab" aria-controls="nav-receive" aria-selected="false">Badges
+                                        Received
+                                    </a>
+
+                                </li>
+                                <li th:if="${employeebadges.getEmployee().getEmail() == loggedinemployee.getEmail()}">
+
+                                    <a class="nav-item nav-link" id="nav-order-tab" data-toggle="tab"
+                                       href="#nav-order"
+                                       role="tab" aria-controls="nav-order" aria-selected="false">Order History
+                                    </a>
+
+                                </li>
+                            </ul>
+
+
+                            <div class="card-body">
+
+                                <div class="tab-content" id="nav-tabContent">
+
+                                    <div class="tab-pane fade show active" id="nav-all" role="tabpanel"
+                                         aria-labelledby="nav-all-tab">
+
+                                        <div class="row" th:each="post:${employeePosts}">
+
+                                            <div class="col-md-1" style="vertical-align: center">
+
+                                                <img class="receiverImage"
+                                                     th:src="${post.getReceiver().getProfilePic()}">
+
+                                            </div>
+
+                                            <div class="col-md-11 badgeInfo">
+                                                <strong><a
+                                                        th:text="${post.getReceiver().getFullName()}"></a></strong>
+
+                                                <span> &nbsp; &nbsp;has &nbsp; recieved &nbsp;&nbsp; </span>
+
+                                                <span th:switch="${post.getBadge()}">
+                                        <img th:case="Gold"
+                                             src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                             th:width="15" th:height="15" alt="gold">
+                                    <img th:case="Silver"
+                                         src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                         th:width="15" th:height="15" alt="silver">
+                                    <img th:case="Bronze"
+                                         src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                         th:width="15" th:height="15" alt="bronze"> </span>
+                                                <span>&nbsp;&nbsp; from &nbsp;&nbsp;</span>
+                                                <strong><a th:text="${post.getSender().getFullName()}"></a></strong>
+
+                                                <br>
+                                                <span>Reason:</span>
+                                                <br>
+                                                <span th:text="${post.getComment()}"></span>
+                                                <br>
+                                                <span style="font-weight: bold"
+                                                      th:text="'Given/Received on: ' + ${post.getPostDate()} + ' at ' + ${post.getPostTime()}"></span>
+                                                <hr>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="tab-pane fade show " id="nav-shared" role="tabpanel"
+                                         aria-labelledby="nav-shared-tab">
+
+                                        <div class="row" th:each="post:${senderPosts}">
+
+                                            <div class="col-md-1" style="vertical-align: center">
+
+                                                <img class="receiverImage"
+                                                     th:src="${post.getReceiver().getProfilePic()}">
+
+                                            </div>
+
+                                            <div class="col-md-11 badgeInfo">
+                                                    <strong><a
+                                                            th:text="${post.getReceiver().getFullName()}"></a></strong>
+
+                                                    <span> &nbsp; &nbsp;has &nbsp; recieved &nbsp;&nbsp; </span>
+
+                                                    <span th:switch="${post.getBadge()}">
+                                        <img th:case="Gold"
+                                             src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                             th:width="15" th:height="15"
+                                             alt="gold">
+                                    <img th:case="Silver"
+                                         src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                         th:width="15" th:height="15"
+                                         alt="silver">
+                                    <img th:case="Bronze"
+                                         src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                         th:width="15"
+                                         th:height="15" alt="bronze"> </span>
+                                                    <span>&nbsp;&nbsp; from &nbsp;&nbsp;</span>
+                                                    <strong><a th:text="${post.getSender().getFullName()}"></a></strong>
+
+                                                    <br>
+                                                    <span>Reason:</span>
+                                                    <br>
+                                                    <span th:text="${post.getComment()}"></span>
+                                                <br>
+                                                <span style="font-weight: bold"
+                                                      th:text="'Given on: ' + ${post.getPostDate()} + ' at ' + ${post.getPostTime()}"></span>
+                                                <hr>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="tab-pane fade show " id="nav-receive" role="tabpanel"
+                                         aria-labelledby="nav-receive-tab">
+
+                                        <div class="row" th:each="post:${receiverPosts}">
+
+                                            <div class="col-md-1" style="vertical-align: center">
+
+                                                <img class="receiverImage"
+                                                     th:src="${post.getReceiver().getProfilePic()}">
+
+                                            </div>
+
+                                            <div class="col-md-11 badgeInfo">
+                                                    <strong><a
+                                                            th:text="${post.getReceiver().getFullName()}"></a></strong>
+
+                                                    <span> &nbsp; &nbsp;has &nbsp; recieved &nbsp;&nbsp; </span>
+
+                                                    <span th:switch="${post.getBadge()}">
+                                        <img th:case="Gold"
+                                             src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                             th:width="15" th:height="15"
+                                             alt="gold">
+                                    <img th:case="Silver"
+                                         src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                         th:width="15" th:height="15"
+                                         alt="silver">
+                                    <img th:case="Bronze"
+                                         src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                         th:width="15"
+                                         th:height="15" alt="bronze"> </span>
+                                                    <span>&nbsp;&nbsp; from &nbsp;&nbsp;</span>
+                                                    <strong><a th:text="${post.getSender().getFullName()}"></a></strong>
+
+                                                    <br>
+                                                    <span>Reason:</span>
+                                                    <br>
+                                                    <span th:text="${post.getComment()}"></span>
+                                                <br>
+                                                <span style="font-weight: bold"
+                                                      th:text="'Received on: ' + ${post.getPostDate()} + ' at ' + ${post.getPostTime()}"></span>
+                                                <hr>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div th:if="${employeebadges.getEmployee().getEmail() == loggedinemployee.getEmail()}"
+                                         class="tab-pane fade show " id="nav-order" role="tabpanel"
+                                         aria-labelledby="nav-order-tab">
+
+                                        <div class="row" th:each="order:${orderlist}">
+
+                                            <div class="col-md-12" style="vertical-align: center">
+
+                                                <img class="receiverImage"
+                                                     th:src="${order.getEmployee().getProfilePic()}">
+                                                <span th:text="${order.getEmployee().getFullName()}"></span>
+                                                has purchased
+                                                <span th:text="${order.getItems()}"></span>
+                                                for
+                                                <span th:text="${order.getTotalPrice()}"></span>
+                                                points
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <span style="font-weight: bold" th:text="'Ordered on: ' + ${order.getOrderDate()} + ' at ' + ${order.getOrderTime()}"></span>
+                                                <hr>
+                                            </div>
+                                            <hr>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

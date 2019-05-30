@@ -1,0 +1,235 @@
+
+nav {
+    z-index: 1030;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.content-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f1f4f5;
+    padding-top: 10px;
+    min-height: 515px;
+    margin-top: 60px;
+}
+
+.customNav {
+    padding-bottom: -5px;
+    height: 65px;
+    background-color: white;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+}
+
+.card-header {
+    height: auto;
+    background-color: #0E5A80;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #0E5A80;
+    text-transform: uppercase;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-text {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.bottomMargin20 {
+    margin-bottom: 20px;
+}
+
+.inset {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6),
+    0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: transparent !important;
+    z-index: 999;
+}
+
+
+.inset img {
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    display: block;
+    position: relative;
+    z-index: 998;
+}
+
+.leftPanel {
+    margin-top: 10px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.rightPanel {
+    padding-right: 15px;
+    padding-left: 15px;
+    position: fixed;
+    margin-top: 10px;
+    float: right;
+    margin-left: 74%;
+}
+
+
+.custom-heigth20 {
+    line-height: 20px;
+}
+
+.custom-heigthSelect20 {
+    height: 20px;
+    line-height: 20px;
+}
+
+
+/*Dashboard Colors Links and Hover*/
+
+.dashboardList li.listItem a {
+    font-size: 14px;
+    border-radius: 5px;
+    color: #000000;
+    padding: 8px 15px 8px 35px;
+    line-height: 20px;
+}
+
+
+li.listItem.active a, .dashboardList li.listItem a:hover {
+    background: #d9177f;
+    color: #ffffff;
+}
+
+.marginRight {
+    margin-right: 20px;
+}
+
+
+/*Profile Modal*/
+
+.profileModalContent {
+    width: 500px;
+    padding: 20px;
+    height: auto;
+    margin-bottom: -20px;
+}
+
+.profileModalFontNormal {
+    font-size: 12px;
+}
+
+.profileModalFontBold {
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: -30px
+}
+
+.profileFooter {
+    align-items: center;
+    vertical-align: center;
+    text-align: center;
+    height: 35px;
+    padding: 0 !important;
+    margin-bottom: -10px;
+    background-color: #E8E8E8;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+}
+
+.footerLeft {
+    padding-top: 5px;
+    float: left;
+    margin-left: 20px;
+}
+
+.footerRight {
+    padding-top: 5px;
+    float: right;
+    margin-right: 20px;
+}
+
+.fa-input {
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.fa-style {
+    float: right;
+    margin-right: 20px;
+    font-size: 20px;
+    background: transparent;
+}
+
+.userDetail {
+    align-items: center;
+    horiz-align: center;
+    margin-left: 40px;
+}
+
+
+#myName {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.userDetail {
+    margin-left: 40px;
+}
+
+.userDetail span {
+    display: block;
+    width: 33%;
+    float: left;
+    text-align: left;
+}
+
+.userDetail span i {
+    display: block;
+    font-style: normal;
+    padding-left: 2px;
+    color: #4f6173;
+}
+
+.reedemBtn {
+    height: auto;
+    font-size: 12px;
+    font-weight: bold;
+    float: right;
+    margin-top: 8px;
+    border: 1px solid #505B72;
+    color: white;
+    width: 120px;
+    background-color: #505B72;
+}
+
+.coins {
+    background-image: url('../../static/assets/profileSide.png');
+    background-repeat: no-repeat;
+    background-position-x: 280px;
+}
+
+.pointsStyle {
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+    color: #00804d;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 21px;
+}

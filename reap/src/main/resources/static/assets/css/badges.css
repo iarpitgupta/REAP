@@ -1,0 +1,78 @@
+#profileImage {
+
+    width: 38px;
+    height: 38px;
+    border-radius: 20%;
+
+}
+
+
+.tab-content {
+    min-height: 100px;
+    background-color: white;
+}
+
+/*.nav-tabs > .active > a, .nav-tabs > .active > a:hover {*/
+/*background-color: #9093C5;*/
+/*color: white;*/
+
+/*}*/
+
+.customTable > ul.nav.nav-tabs {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #DBDBDB;
+    color: black;
+
+}
+
+.customTable > ul.nav.nav-tabs > li {
+    float: none;
+    display: table-cell;
+}
+
+.customTable > ul.nav.nav-tabs > li > a {
+    text-align: center;
+    color: black;
+}
+
+.customTable > ul.nav.nav-tabs > li > a.active {
+    background-color: #9093C5;
+    color: white;
+}
+
+.receiverImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    align-items: center;
+}
+
+.customTable {
+    font-size: 14px;
+}
+
+.userInfo {
+    font-size: 14px;
+    padding-top: 20px !important;
+    padding-left: 15px !important;
+}
+
+.pointsBtn{
+    height: auto;
+    font-size: 12px;
+    font-weight: bold;
+    float: right;
+    margin-top: 8px;
+    border: 1px solid #505B72;
+    color: white;
+    width: 120px;
+    background-color: #505B72;
+}
+
+
+
+
+
+

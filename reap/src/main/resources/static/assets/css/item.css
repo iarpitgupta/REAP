@@ -1,0 +1,342 @@
+.recieverImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    align-items: center;
+}
+
+.reedemBtn {
+    height: auto;
+    font-size: 12px;
+    font-weight: bold;
+    float: right;
+    margin-top: 8px;
+    border: 1px solid #0471A6;
+    color: white;
+    width: 120px;
+    background-color: #0471A6;
+    margin-bottom: 20px;
+}
+
+
+.itemBody {
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+}
+
+.itemPoints {
+    vertical-align: center;
+    align-items: center;
+    margin-left: 25%;
+    background-color: #17a2b8;
+    max-width: 110px;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.itemName {
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: dimgray;
+}
+
+.itemSelectQuant{
+    width: 100%;
+    float: left;
+    margin: 7px 0;
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 4px 5px;
+    appearance: none;
+    position: relative;
+    z-index: 2;
+    height: 30px;
+}
+
+.totalCost{
+    float: right;
+    width: 100%;
+    clear: both;
+    max-width: 221px;
+}
+
+#points{
+    margin-right:40px;
+    color: red;
+    font-weight: bolder;
+    font-size: 18px;
+    float: right;
+}
+
+#totalText{
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    float: left;
+}
+
+.redeemRow{
+    margin-top: 40px;
+}
+
+.RButton{
+    float: right;
+    margin-right: 30px;
+    width: 110px;
+    /* background: ; */
+}
+
+.cartBtn{
+    font-size: 14px;
+    margin-top: 30px;
+    align-content: center;
+    padding: 10px 10px 10px 10px;
+    width: 140px;
+    background:  #218838
+    url("../../static/assets/reapnow.png") 10px 10px no-repeat;
+    border-radius: 16px;
+    border: 1px solid #d9d9d9;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.nav-menu {
+    line-height: 48px;
+    float: left;
+    margin-left: 16px;
+}
+
+
+
+.menu-item a {
+    font-size: 18px;
+}
+
+.dashboardList li.listItem a {
+
+    border-radius: 5px;
+    color: #000000;
+    padding: 8px 15px 8px 35px;
+
+}
+
+li.listItem.active a, .dashboardList li.listItem a:hover {
+    background: #d9177f;
+    color: #ffffff;
+}
+
+.userDetail {
+    margin-left: -10px;
+}
+
+.userDetail span {
+    display: block;
+    width: 33%;
+    float: left;
+    text-align: left;
+}
+
+.userDetail span i {
+    display: block;
+    padding-left: 2px;
+
+}
+
+
+nav {
+    z-index: 1030;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.content-wrapper {
+    /*margin: 70px 0 0 0;*/
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f1f4f5;
+    padding-top: 10px;
+    min-height: 515px;
+}
+
+.customNav {
+    background-color: white;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+}
+
+.inset img {
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    display: block;
+    position: relative;
+    z-index: 998;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.card-header {
+    height: auto;
+    background-color: #0E5A80;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #0E5A80;
+    text-transform: uppercase;
+    border-radius: 20px 20px 0 0;
+}
+
+
+.recieverImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    align-items: center;
+}
+
+
+.profileModalContent {
+    width: 500px;
+    padding: 20px;
+    height: auto;
+    margin-bottom: -20px;
+}
+
+.profileModalFontNormal {
+    font-size: 12px;
+}
+
+.profileModalFontBold {
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: -30px
+}
+
+.profileFooter {
+    align-items: center;
+    vertical-align: center;
+    text-align: center;
+    height: 35px;
+    padding: 0 !important;
+    margin-bottom: -10px;
+    background-color: #E8E8E8;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+}
+
+
+.footerRight {
+    padding-top: 5px;
+    float: right;
+    margin-right: 20px;
+}
+
+
+.nav-menu {
+    line-height: 48px;
+    float: left;
+    margin-left: 16px;
+}
+
+
+
+.menu-item a {
+    font-size: 18px;
+}
+
+.dashboardList li.listItem a {
+
+    border-radius: 5px;
+    color: #000000;
+    padding: 8px 15px 8px 35px;
+
+}
+
+li.listItem.active a, .dashboardList li.listItem a:hover {
+    background: #d9177f;
+    color: #ffffff;
+}
+
+.userDetail {
+    margin-left: -10px;
+}
+
+.userDetail span {
+    display: block;
+    width: 33%;
+    float: left;
+    text-align: left;
+}
+
+.userDetail span i {
+    display: block;
+    padding-left: 2px;
+
+}
+
+
+.active, .btn:hover {
+    background-color: palevioletred;
+}
+
+
+
+body {
+    background-color: #f1f4f5;
+}
+
+
+.dropdown {
+    color: white;
+}
+
+
+
+.card-body {
+    background-color: white;
+}
+
+
+
+.card-header {
+    width: 100%;
+    float: left;
+    padding: 4px 20px;
+    border-radius: 5px 5px 0 0;
+    /* height: 38px; */
+    color: white;
+    background-color: #0e5a80;
+    font-size: 14px;
+}
+
+

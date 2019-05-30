@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LogIn</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#showpassword").click(function () {
+                if ($("#showpassword").is(":checked")) {
+                    $("#password").prop('type', 'text');
+                }
+                else {
+                    $("#password").prop('type', 'password');
+                }
+            });
+        });
+
+    </script>
+</head>
+<body style="background-color:#0D4A3D ">
+
+<div class="container jumbotron" style="width: 50%; align-content: center; margin-top: 70px; padding-top: 20px">
+    <div style="margin-left: 230px">
+        <img src="http://reap.tothenew.com/assets/reap-ed280031215032f3350f114b95893a51.png" height="30" width="120"/>
+    </div>
+
+    <br><br>
+    <form class="form-horizontal" action="/login" method="post">
+        <fieldset>
+            <div th:if="${badCredentials}">
+                <div class="alert alert-danger" role="alert">
+                    <span th:text="${badCredentials}"></span>
+                </div>
+            </div>
+            <div th:if="${inactive}">
+                <div class="alert alert-danger" role="alert">
+                    <span th:text="${inactive}"></span>
+                </div>
+            </div>
+            <div th:if="${loggedOut}">
+                <div class="alert alert-info" role="alert">
+                    <span th:text="${loggedOut}"></span>
+                </div>
+            </div>
+            <div th:if="${signupsuccessful}">
+                <div class="alert alert-success" role="alert">
+                    <span th:text="${signupsuccessful}"></span>
+                </div>
+            </div>
+            <div th:if="${successMessage}">
+                <div class="alert alert-success" role="alert">
+                    <span th:text="${successMessage}"></span>
+                </div>
+            </div>
+            <!-- Form Name -->
+            <legend>LogIn</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Email</label>
+                <div class="col-md-5">
+                    <input name="email" type="text" placeholder="Email" class="form-control input-md" required="">
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Password</label>
+                <div class="col-md-5">
+                    <input id="password" name="password" type="password" placeholder="Password"
+                           class="form-control input-md"
+                           required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-7 control-label">
+                    <div class="checkbox">
+                        <label for="showpassword">
+                            <input type="checkbox" name="showpassword" id="showpassword" value="1">
+                            Show Password
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="submit"></label>
+                <div class="col-md-4">
+                    <button id="submit" name="submit" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <a href="/recoveremail" style="margin-left: 220px">Forgot Password?</a>
+    <br><br>
+    <a href="/signup" style="margin-left: 220px">Don't have an account?</a>
+</div>
+</body>
+</html>

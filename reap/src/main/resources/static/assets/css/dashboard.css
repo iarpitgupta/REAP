@@ -1,0 +1,105 @@
+
+
+.recognizeBtn {
+    height: auto;
+    font-size: 12px;
+    font-weight: bold;
+    float: right;
+    margin-top: 20px;
+    border: 1px solid #505B72;
+    color: white;
+    width: 120px;
+    background-color: #505B72;
+}
+
+
+.reason-area {
+    padding: 20px;
+    height: 150px !important;
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    font-size: 13px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.badegeInfo {
+    font-size: 14px;
+}
+
+.recieverImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    align-items: center;
+}
+
+.userInfo {
+    font-size: 14px;
+    padding-top: 20px !important;
+    padding-left: 15px !important;
+}
+
+.myName {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+.userDetail span {
+    display: block;
+    width: 33%;
+    float: left;
+    text-align: left;
+}
+
+.userDetail span i {
+    display: block;
+    font-style: normal;
+    padding-left: 2px;
+    color: #4f6173;
+}
+
+select.badges option {
+    background-repeat:no-repeat;
+    background-position:bottom left;
+    padding-left:30px;
+}
+select#badge option[value="Gold"] {
+    background-image:url("../../static/assets/gold.png");
+}
+select#badge option[value="Silver"] {
+    background-image:url("../../static/assets/silver.png");
+}
+
+select#badge option[value="Bronze"] {
+    background-image: url("../../static/assets/bronze.png");
+}
+
+.receiverImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    align-items: center;
+}
+
+.pageBtn{
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+/*.rightPanel {*/
+/*position: fixed;*/
+/*margin-left: 74%;*/
+/*padding-right: 15px;*/
+/*padding-left: 15px;*/
+/*}*/
+
+

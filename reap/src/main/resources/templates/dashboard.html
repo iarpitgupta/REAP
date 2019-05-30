@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoard</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="header" content="text/css">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <link th:href="@{/assets/css/dashboard.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/assets/css/main.css}" type="text/css" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/assets/js/Dashboard.js}"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header>
+
+        <nav class="navbar navbar-expand-sm  fixed-top customNav">
+
+            <!--Toggle Button-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+
+                <!--Navbar Images-->
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/private/dashboard"><img
+                                src="http://reap.tothenew.com/assets/reap-ed280031215032f3350f114b95893a51.png"
+                                height="30"
+                                width="120"/></a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/private/dashboard"><img
+                                src="http://reap.tothenew.com/assets/text_footer-8f0e1eb9c8ec931dcc66dbcdc631fe64.png"
+                                height="30"
+                                width="400"/></a>
+
+                    </li>
+
+                </ul>
+
+
+                <!--Nav Links-->
+                <div class="collapse navbar-collapse justify-content-end">
+
+                    <ul class="nav navbar-nav navbar-right dashboardList justify-content-end pull-right"
+                        style="align-items: center; margin-right: 30px;">
+
+                        <li class="nav-item nav-menu marginRight listItem active">
+
+                            <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                        </li>
+
+                        <li class="nav-item nav-menu marginRight listItem ">
+
+                            <a class="nav-link" th:href="@{'/private/badges/' + ${employee.getEmail()}}"><i
+                                    class="fas fa-award"></i>Badges</a>
+
+                        </li>
+                        <li class="nav-item nav-menu marginRight listItem ">
+
+                            <a class="nav-link" href="/private/itemspage"><i class="fas fa-award"></i>Items</a>
+
+                        </li>
+
+                    </ul>
+
+
+                    <!--Profile Modal DropDown-->
+
+
+                    <ul class="navbar-nav" style="margin-right: 30px;">
+
+                        <li class="nav-item dropdown">
+
+                            <a id="profileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="recieverImage" th:src="${employee.getProfilePic()}">
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileMenu">
+
+                                <div class="profileModal">
+
+                                    <div class="profileModalContent">
+
+                                        <h4 th:text="${employee.getFullName()}"></h4>
+
+                                        <div class="row" style="margin-top: 10px">
+
+                                            <!--Profile Image-->
+                                            <div class="col-md-4">
+                                                <img th:src="${employee.getProfilePic()}"
+                                                     width="80px" height="80px"/>
+                                            </div>
+
+                                            <!--Profile Info-->
+                                            <div class="col-md-8">
+
+                                                <div class="row">
+                                                    <div class="col-md-4 profileModalFontNormal">
+                                                        <p>Name:</p>
+                                                        <p>Email:</p>
+                                                    </div>
+                                                    <div class="col-md-8 profileModalFontBold">
+                                                        <p th:text="${employee.getFullName()}"></p>
+                                                        <p th:text="${employee.getEmail()}"></p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                    <!--Profile Footer-->
+                                    <div class="clearfix profileFooter">
+                                        <a class="footerRight logout" href="/logout">Logout</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="content-wrapper" style="min-height: 515px; margin-top: 60px;">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <!--Left Panel Scrollable-->
+                <div class="col-md-9 leftPanel">
+
+                    <!--Recognize Card-->
+                    <div class="card">
+
+                        <!--Card Header-->
+                        <div class="card-header">
+                            <img src="http://reap.tothenew.com/assets/ico-badge-hover-6ad40a50088b6e0747f43352ae621d8c.png"
+                                 height="18" width="20"/> &nbsp;&nbsp;Recognize Newer
+                        </div>
+
+                        <!--Card Body-->
+                        <div class="card-body">
+
+                            <form action="/private/createpost" method="post">
+                                <div th:if="${success}">
+                                    <div class="alert alert-success" role="alert">
+                                        <small th:text="${success}"></small>
+                                    </div>
+                                </div>
+                                <div th:if="${error}">
+                                    <div class="alert alert-danger" role="alert">
+                                        <small th:text="${error}"></small>
+                                    </div>
+                                </div>
+                                <!--Newer name ,badges,karma-->
+                                <div class="card-title">
+
+                                    <div class="row">
+
+                                        <!--Newer Name Select-->
+                                        <div class="col-md-5 ">
+
+                                            <input id="newerid" type="text" class="form-control custom-heigth20"
+                                                   placeholder="Select Newer" name="email">
+
+                                        </div>
+
+                                        <!--Select Badges-->
+                                        <div class="col-md-3">
+
+                                            <select class="form-control custom-heigthSelect20 badges" name="badge" required>
+
+                                                <option value="" disabled selected>Select Badge</option>
+
+                                                <option value="Gold" th:disabled="${employee.getGold()==0}">
+                                                    <!--<img src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png" height="16" width="18"/>-->
+                                                    <span th:text="'Gold' + '(' + ${employee.getGold()} + ')'"/>
+                                                </option>
+                                                <option value="Silver" th:disabled="${employee.getSilver()==0}">
+                                                    <!--<img src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png" height="16" width="18"/>-->
+                                                    <span th:text="'Silver' + '(' + ${employee.getSilver()} + ')'"/>
+                                                </option>
+                                                <option value="Bronze" th:disabled="${employee.getBronze()==0}">
+                                                    <!--<img src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png" height="16" width="18"/>-->
+                                                    <span th:text="'Bronze' + '(' + ${employee.getBronze()} + ')'"/>
+                                                </option>
+
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--Card Body Starts-->
+
+                                <p class="card-text">Reason:</p>
+
+                                <div class="reason-area">
+
+                                    <textarea name="comment" rows="5" cols="90"
+                                              placeholder="Enter Your Reason Here!! (Maximum 250 characters allowed)"
+                                              maxlength="250" required></textarea>
+
+                                </div>
+
+                                <button class="recognizeBtn btn btn-default" type="submit" value="Submit">
+                                    Recognize
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card"
+                         th:each="role:${employee.getRoles()}" th:if="${role.getRole()=='Admin'}">
+                        <div class="card-header">
+                            <i class="fas fa-users"></i>
+                            Employees
+                        </div>
+
+                        <!--Card Body-->
+                        <div class="card-body">
+                            <div id="result">
+                                <small></small>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="manageemployees" class=" row-border order-column" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Revoke Role</th>
+                                        <th>Give Role</th>
+                                        <th>Active</th>
+                                        <th>Email</th>
+                                        <th>Available Points</th>
+                                        <th>
+                                            <p>Badges</p>
+                                            <span><img
+                                                    src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                                    height="13" width="15"/>
+                                            </span>
+                                            <span><img
+                                                    src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                                    height="13" width="15"/>
+                                            </span>
+                                            <span><img
+                                                    src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                                    height="13" width="15"/>
+                                            </span>&nbsp;&nbsp;
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="employeestars:${manageemployeeslist}">
+                                        <td th:text="${employeestars.getEmployee().getFullName()}"></td>
+                                        <td>
+                                            <select class="form-control takerole" style="width: 150px">
+                                                <option selected disabled>Select Role</option>
+                                                <option th:each="role:${employeestars.getEmployee().getRoles()}"
+                                                        th:value="${role.getRole()}"
+                                                        th:text="${role.getRole()}"
+                                                ></option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control giverole" style="width: 150px">
+                                                <option selected disabled>Select Role</option>
+                                                <option th:each="role:${allroles}"
+                                                        th:value="${role.getRole()}"
+                                                        th:text="${role.getRole()}">
+                                                </option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input class="user-active" type="checkbox"
+                                                   th:checked="${employeestars.getEmployee().getActive()}"
+                                                   th:value="${employeestars.getEmployee().getActive()}">
+                                        </td>
+                                        <td class="user-email-id" th:text="${employeestars.getEmployee().getEmail()}"
+                                            th:value="${employeestars.getEmployee().getEmail()}"></td>
+                                        <td>
+                                            <input class="totalpoints" style="width: 45px" type="number"
+                                                   th:value="${employeestars.getTotalPoints()}">
+                                        </td>
+                                        <td>
+                                            <input class="gold"  style="width: 20px"
+                                                   th:value="${employeestars.getEmployee().getGold()}">
+                                            <input class="silver" style="width: 20px"
+                                                   th:value="${employeestars.getEmployee().getSilver()}">
+                                            <input class="bronze"  style="width: 20px"
+                                                   th:value="${employeestars.getEmployee().getBronze()}">
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <!--Wall Of Fame Card-->
+                    <div id="wall-of-fame" class="card">
+
+
+                        <div class="card-header">
+
+                            <div class="row">
+
+                                <div class="col-md-4" style="vertical-align: center;align-items: center">
+                                    <img src="http://reap.tothenew.com/assets/ico-wall-hover-b0efac84ef2af6d4790cd642372d7c9b.png"
+                                         height="18" width="20"/> &nbsp;&nbsp;Wall
+                                    Of Fame
+
+                                </div>
+                                <div class="col-md-4" style="text-align: center">
+                                    <input class="form-control fa-input searchBox" type="text"
+                                           placeholder="&#xF002;Search"
+                                           style="line-height: 15px;height: 25px;font-size: 13px">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="hidden" name="startDate" id="startDate">
+                                    <input type="hidden" name="endDate" id="endDate">
+                                    <span id="dt" name="dates"><i class="fa fa-calendar fa-style"
+                                                                  aria-hidden="true"></i></span>
+                                </div>
+
+                                <div class="col-md-1" th:each="role:${employee.getRoles()}"
+                                     th:if="${role.getRole()=='Admin'}">
+                                    <a href=""
+                                       onclick="this.href='/private/download?startDate='+document.getElementById('startDate').value+'&endDate='+document.getElementById('endDate').value"
+                                       id="download">
+                                        <i class="fa fa-download fa-style" aria-hidden="true" style="color: white"></i></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div id="deletepost">
+                            <small></small>
+                        </div>
+                        <div class="record">
+                            <div id="page">
+                                <div id="postbox" class="list-group" th:fragment="wallOfFame">
+                                    <div id="filter" class="card-body" th:each="post:${postslist}">
+
+                                        <div class="row">
+
+                                            <div class="col-md-1" style="vertical-align: center">
+
+                                                <img class="recieverImage"
+                                                     th:src="${post.getReceiver().getProfilePic()}">
+
+                                            </div>
+
+                                            <div class="col-md-11 badegeInfo">
+
+                                                <strong><a
+                                                        th:href="@{'/private/badges/' + ${post.getReceiver().getEmail()}}"
+                                                        th:text="${post.getReceiver().getFullName()}"></a></strong> has
+                                                recieved
+                                                <span th:switch="${post.getBadge()}">
+                        <img th:case="Gold"
+                             src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                             th:width="15" th:height="15" alt="gold">
+                        <img th:case="Silver"
+                             src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                             th:width="15" th:height="15" alt="silver">
+                        <img th:case="Bronze"
+                             src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                             th:width="15" th:height="15" alt="bronze"> </span>
+                                                from
+                                                <strong>
+                                                    <a th:href="@{'/private/badges/' + ${post.getSender().getEmail()}}"
+                                                       th:text="${post.getSender().getFullName()}"></a>
+                                                </strong>
+                                                <p th:text="${post.getComment()}"></p>
+                                                <p style="font-weight: bold" th:text="'Given on: ' + ${post.getPostDate()} + ' at ' + ${post.getPostTime()}"></p>
+                                                <span class="delete-post" th:each="role:${employee.getRoles()}"
+                                                      th:if="${role.getRole()=='Admin'}">
+                        <label style="font-weight: bold">Enter reason for revocation*</label>&nbsp;
+                        <input required="" class="col-md-5" type="text" id="reason">
+                        <br>
+                        <button><i class="fas fa-trash"></i>
+                        <input class="get-row-key" th:value="${post.getId()}" type="hidden">
+                        </button>
+                        </span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--Right panel-->
+                <div class="col-md-3 rightPanel">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <img src="http://reap.tothenew.com/assets/ico-badge-hover-6ad40a50088b6e0747f43352ae621d8c.png"
+                                 height="18" width="20"/> &nbsp;&nbsp;My Badges
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="row">
+
+
+                                <div class="col-sm-4" style="align-items: center;horiz-align: center">
+
+                                    <a th:href="@{'/private/badges/' + ${employee.getEmail()}}">
+                                        <img class="recieverImage" th:src="${employee.getProfilePic()}">
+                                    </a>
+
+                                </div>
+
+                                <div class="col-sm-6 userDetail" style="margin-left: -10px">
+
+                                    <h3 class="myName" th:text="${employee.getFullName()}"></h3>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                             height="18" width="20"/>
+                                        <i th:text="${employeestar.getGold()}"></i>
+                                  </span>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                             height="18" width="20"/>
+                                         <i th:text="${employeestar.getSilver()}"></i>
+                                  </span>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                             height="18" width="20"/>
+                                         <i th:text="${employeestar.getBronze()}"></i>
+                                  </span>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-header">
+                            <i class="far fa-calendar-alt"></i>
+                            Newers Board
+                        </div>
+
+                        <div class="card-body" style="overflow-y: auto;height: 300px;padding-bottom: 30px;">
+
+                            <div class="row" style="margin-bottom: 13px"
+                                 th:each="topemployee:${top5employeeswithmaxpoints}">
+
+
+                                <div class="col-sm-4" style="align-items: center;horiz-align: center">
+
+                                    <img class="recieverImage"
+                                         th:src="${topemployee.getEmployee().getProfilePic()}">
+
+                                </div>
+
+                                <div class="col-sm-6 userDetail" style="margin-left: -10px">
+
+                                    <h3 class="myName" th:text="${topemployee.getEmployee().getFullName()}"></h3>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-orange-7487656ca410c0f2051788659278f212.png"
+                                             height="18" width="20"/>
+                                        <i th:text="${topemployee.getGold()}"></i>
+                                  </span>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-grey-6e2741b0311f87111d40aac66392bf22.png"
+                                             height="18" width="20"/>
+                                         <i th:text="${topemployee.getSilver()}"></i>
+                                  </span>
+
+                                    <span>
+                                        <img src="http://reap.tothenew.com/assets/ico-badge-brown-6e5dc638c4ee9eef490cfcb0a5cce103.png"
+                                             height="18" width="20"/>
+                                         <i th:text="${topemployee.getBronze()}"></i>
+                                  </span>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

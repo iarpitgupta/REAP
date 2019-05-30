@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#Submit").click(function (e) {
+                if ($("#password").val() != $("#confirmpassword").val()) {
+                    alert("Password and Confirm password did not match.");
+                    e.preventDefault();
+                }
+            });
+
+            $("#showpassword").click(function () {
+                if ($("#showpassword").is(":checked")) {
+                    $("#password").prop('type', 'text');
+                    $("#confirmpassword").prop('type', 'text');
+                }
+                else {
+                    $("#password").prop('type', 'password');
+                    $("#confirmpassword").prop('type', 'password');
+                }
+            });
+        });
+    </script>
+</head>
+<body style="background-color: #6F1734">
+<div class="container jumbotron" style="width: 50%; align-content: center; margin-top: 70px; padding-top: 20px">
+    <div style="margin-left: 230px">
+        <img src="http://reap.tothenew.com/assets/reap-ed280031215032f3350f114b95893a51.png" height="30" width="120"/>
+    </div>
+    <br><br>
+    <form class="form-horizontal" th:object="${employee}" th:action="@{/signup}" method="post"
+          enctype="multipart/form-data">
+
+        <!-- Form Name -->
+        <legend>SignUp</legend>
+
+        <div th:if="${emailexists}">
+            <div class="alert alert-danger" role="alert">
+                <small th:text="${emailexists}"></small>
+            </div>
+        </div>
+        <!-- Text input-->
+        <div th:if="${#fields.hasErrors('firstName')}" class="alert alert-danger">
+            <small th:errors="*{firstName}"></small>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="firstName">First Name *</label>
+            <div class="col-md-5">
+                <input id="firstName" name="firstName" type="text" placeholder="First Name"
+                       class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div th:if="${#fields.hasErrors('lastName')}" class="alert alert-danger">
+            <small th:errors="*{lastName}"></small>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="lastName">Last Name *</label>
+            <div class="col-md-5">
+                <input id="lastName" name="lastName" type="text" placeholder="Last name" class="form-control input-md"
+                       required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger">
+            <small th:errors="*{email}"></small>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Email *</label>
+            <div class="col-md-5">
+                <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md"
+                       pattern="[a-zA-Z]+[a-zA-Z0-9._-]*@[a-zA-Z0-9]+\.com"
+                       title="Email should not start with special character or number and must end with '@tothenew.com'"
+                       required="">
+
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="password">Password *</label>
+            <div class="col-md-5">
+                <input id="password" name="password" type="password" placeholder="Password"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                       class="form-control input-md" required="" minlength="6"
+                       title="Password must contain at least one number, one uppercase, one lowercase letter and at least 6characters">
+
+            </div>
+        </div>
+
+        <!--Confirm Password-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="confirmpassword">Confirm Password *</label>
+            <div class="col-md-5">
+                <input id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password"
+                       class="form-control input-md" required="">
+            </div>
+        </div>
+
+        <!--Show Password-->
+        <div class="form-group">
+            <div class="col-md-7 control-label">
+                <div class="checkbox">
+                    <label for="showpassword">
+                        <input type="checkbox" name="showpassword" id="showpassword" value="1">
+                        Show Password
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="profilepic">Profile Picture</label>
+            <div class="col-md-5">
+                <input id="profilePic" name="profilepic" class="input-file" type="file" accept="image/*">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="submit"></label>
+            <div class="col-md-5">
+                <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <a href="/login" style="margin-left: 220px">Already Registered?</a>
+</div>
+</body>
+</html>

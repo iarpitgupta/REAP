@@ -1,0 +1,79 @@
+2019-05-25 10:13:38.377  INFO 19136 --- [restartedMain] com.ttn.reap.ReapApplication             : Starting ReapApplication on Arpit-Gupta with PID 19136 (/home/arpit/Reap/reap/out/production/classes started by arpit in /home/arpit/Reap/reap)
+2019-05-25 10:13:38.389  INFO 19136 --- [restartedMain] com.ttn.reap.ReapApplication             : No active profile set, falling back to default profiles: default
+2019-05-25 10:13:38.508  INFO 19136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-05-25 10:13:38.509  INFO 19136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-05-25 10:13:40.706  INFO 19136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-25 10:13:40.821  INFO 19136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96ms. Found 6 repository interfaces.
+2019-05-25 10:13:41.312  INFO 19136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ade06b72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-25 10:13:41.734  INFO 19136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-25 10:13:41.751  INFO 19136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-25 10:13:41.751  INFO 19136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-25 10:13:41.759  INFO 19136 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-05-25 10:13:41.831  INFO 19136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-25 10:13:41.831  INFO 19136 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3322 ms
+2019-05-25 10:13:42.124  INFO 19136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-25 10:13:42.204  INFO 19136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-25 10:13:42.382  INFO 19136 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-25 10:13:42.524  INFO 19136 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.6.Final}
+2019-05-25 10:13:42.526  INFO 19136 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-25 10:13:42.577  INFO 19136 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-05-25 10:13:42.650  INFO 19136 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-05-25 10:13:43.313  INFO 19136 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-25 10:13:43.386  INFO 19136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-25 10:13:44.281  INFO 19136 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-25 10:13:44.306  WARN 19136 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-25 10:13:44.372  WARN 19136 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-05-25 10:13:44.453  INFO 19136 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-05-25 10:13:44.521  INFO 19136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-25 10:13:44.523  INFO 19136 --- [restartedMain] com.ttn.reap.ReapApplication             : Started ReapApplication in 7.224 seconds (JVM running for 8.633)
+2019-05-25 10:13:44.622  INFO 19136 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-05-25 10:14:33.791  INFO 19136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-25 10:14:33.792  INFO 19136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-25 10:14:33.819  INFO 19136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 27 ms
+2019-05-25 10:14:36.062  INFO 19136 --- [http-nio-8080-exec-3] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:14:45.910  INFO 19136 --- [http-nio-8080-exec-5] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:15:18.189  INFO 19136 --- [http-nio-8080-exec-9] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:15:19.351  INFO 19136 --- [http-nio-8080-exec-1] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:15:48.451  INFO 19136 --- [http-nio-8080-exec-5] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:15:50.629  INFO 19136 --- [http-nio-8080-exec-7] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:15:51.585  INFO 19136 --- [http-nio-8080-exec-9] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:15:53.633  INFO 19136 --- [http-nio-8080-exec-1] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:16:03.902  INFO 19136 --- [http-nio-8080-exec-3] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:16:12.753  INFO 19136 --- [http-nio-8080-exec-7] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:18:23.098  INFO 19136 --- [http-nio-8080-exec-10] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:18:33.079  INFO 19136 --- [http-nio-8080-exec-2] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:18:41.044  INFO 19136 --- [http-nio-8080-exec-3] c.ttn.reap.controllers.LoginController   : arpitg276@gmail.com loggedin.
+2019-05-25 10:18:41.060  INFO 19136 --- [http-nio-8080-exec-6] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:18:42.629  INFO 19136 --- [http-nio-8080-exec-8] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:18:46.653  INFO 19136 --- [http-nio-8080-exec-10] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:22:34.754  INFO 19136 --- [http-nio-8080-exec-4] c.ttn.reap.controllers.LoginController   : On Logging Page
+2019-05-25 10:54:56.157  INFO 19136 --- [http-nio-8080-exec-5] c.ttn.reap.controllers.LoginController   : arpitg276@gmail.com loggedin.
+2019-05-25 10:54:56.180  INFO 19136 --- [http-nio-8080-exec-7] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:54:56.611  INFO 19136 --- [http-nio-8080-exec-8] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:55:30.865  INFO 19136 --- [http-nio-8080-exec-1] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:55:33.490  INFO 19136 --- [http-nio-8080-exec-2] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:55:33.669  INFO 19136 --- [http-nio-8080-exec-4] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:55:40.655  INFO 19136 --- [http-nio-8080-exec-6] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:55:43.233  INFO 19136 --- [http-nio-8080-exec-5] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:55:43.420  INFO 19136 --- [http-nio-8080-exec-7] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:55:46.502  INFO 19136 --- [http-nio-8080-exec-10] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:57:06.007  INFO 19136 --- [http-nio-8080-exec-10] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:57:06.268  INFO 19136 --- [http-nio-8080-exec-1] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:57:17.329  INFO 19136 --- [http-nio-8080-exec-2] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:57:17.573  INFO 19136 --- [http-nio-8080-exec-6] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:58:14.019  INFO 19136 --- [http-nio-8080-exec-9] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:58:14.253  INFO 19136 --- [http-nio-8080-exec-10] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:58:38.441  INFO 19136 --- [http-nio-8080-exec-2] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:58:38.707  INFO 19136 --- [http-nio-8080-exec-6] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 10:58:47.485  WARN 19136 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2019-05-25 10:59:08.093  INFO 19136 --- [http-nio-8080-exec-8] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 10:59:08.316  INFO 19136 --- [http-nio-8080-exec-9] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 11:00:02.608  INFO 19136 --- [http-nio-8080-exec-7] c.t.r.controllers.DashboardController    : Inside Dashboard
+2019-05-25 11:00:02.812  INFO 19136 --- [http-nio-8080-exec-8] c.t.r.controllers.DashboardController    : Getting all employees
+2019-05-25 11:04:42.240  INFO 19136 --- [Thread-24] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-05-25 11:04:42.240  INFO 19136 --- [Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-05-25 11:04:42.242  INFO 19136 --- [Thread-24] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-05-25 11:04:42.244  INFO 19136 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-05-25 11:04:42.247  INFO 19136 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
