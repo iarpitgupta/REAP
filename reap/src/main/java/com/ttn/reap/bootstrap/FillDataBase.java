@@ -2,8 +2,10 @@ package com.ttn.reap.bootstrap;
 
 import com.ttn.reap.entities.Badges;
 import com.ttn.reap.entities.Employee;
+import com.ttn.reap.entities.EmployeeReceivedStar;
 import com.ttn.reap.entities.Role;
 import com.ttn.reap.repositories.BadgeRepository;
+import com.ttn.reap.repositories.EmployeeReceivedStarRepository;
 import com.ttn.reap.repositories.EmployeeRepository;
 import com.ttn.reap.repositories.RoleRepository;
 import org.fluttercode.datafactory.impl.DataFactory;
@@ -28,6 +30,9 @@ public class FillDataBase {
     @Autowired
     BadgeRepository badgeRepository;
 
+    @Autowired
+    EmployeeReceivedStarRepository employeeReceivedStarRepository;
+
 
     @EventListener(ApplicationStartedEvent.class)
     void fillData() {
@@ -44,22 +49,22 @@ public class FillDataBase {
             admin.setBronze(3);
             roleRepository.save(admin);
             Role practiceHead = new Role();
-            admin.setRole("Practice Head");
-            admin.setGold(3);
-            admin.setSilver(6);
-            admin.setBronze(9);
+            practiceHead.setRole("Practice Head");
+            practiceHead.setGold(3);
+            practiceHead.setSilver(6);
+            practiceHead.setBronze(9);
             roleRepository.save(practiceHead);
             Role supervisor = new Role();
-            admin.setRole("Supervisor");
-            admin.setGold(2);
-            admin.setSilver(3);
-            admin.setBronze(6);
+            supervisor.setRole("Supervisor");
+            supervisor.setGold(2);
+            supervisor.setSilver(3);
+            supervisor.setBronze(6);
             roleRepository.save(supervisor);
             Role user = new Role();
-            admin.setRole("User");
-            admin.setGold(1);
-            admin.setSilver(2);
-            admin.setBronze(3);
+            user.setRole("User");
+            user.setGold(1);
+            user.setSilver(2);
+            user.setBronze(3);
             roleRepository.save(user);
         }
 
@@ -70,6 +75,7 @@ public class FillDataBase {
             employee.setLastName("Gupta");
             employee.setActive(true);
             employee.setEmail("arpit.gupta@tothenew.com");
+            employee.setProfilePic("/assets/images/reapprofilepic.png");
             employee.setCreatedOn(dataFactory.getDateBetween(minDate, maxDate));
             employee.setGold(0);
             employee.setSilver(0);
@@ -88,13 +94,26 @@ public class FillDataBase {
             gold.setValue(30);
             badgeRepository.save(gold);
             Badges silver = new Badges();
-            silver.setBadgeName("silver");
+            silver.setBadgeName("Silver");
             silver.setValue(20);
             badgeRepository.save(silver);
             Badges bronze = new Badges();
-            gold.setBadgeName("Bronze");
-            gold.setValue(10);
+            bronze.setBadgeName("Bronze");
+            bronze.setValue(10);
             badgeRepository.save(bronze);
+        }
+
+        Iterator<EmployeeReceivedStar> receivedStarRepositoryIterator = employeeReceivedStarRepository.findAll().iterator();
+        if(!receivedStarRepositoryIterator.hasNext()){
+            EmployeeReceivedStar receivedStar = new EmployeeReceivedStar();
+            Employee employee = employeeRepository.findByEmail("arpit.gupta@tothenew.com");
+            receivedStar.setEmployee(employee);
+            receivedStar.setGold(0);
+            receivedStar.setSilver(0);
+            receivedStar.setBronze(0);
+            receivedStar.setPointsRedeemed(0);
+            receivedStar.setTotalPoints();
+            employeeReceivedStarRepository.save(receivedStar);
         }
     }
 }

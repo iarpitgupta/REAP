@@ -13,7 +13,6 @@ public class ReapApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ReapApplication.class, args);
-
     }
 
 }

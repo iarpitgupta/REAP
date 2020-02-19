@@ -31,7 +31,7 @@ public class Employee {
 
     @NotEmpty
     @NotBlank
-    @Size(min = 2, max = 30, message = "First Name must have 2 to 30 characters")
+    @Size(min = 2, max = 30, message = "Last Name must have 2 to 30 characters")
     String lastName;
 
     @Transient
